@@ -88,6 +88,9 @@ export default tseslint.config(
 
   {
     extends: [eslintPluginUnicorn.configs.all],
+    rules: {
+      "unicorn/no-keyword-prefix": "off",
+    },
   },
 
   {

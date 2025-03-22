@@ -1,3 +1,5 @@
+// eslint-disable-next-line import/no-nodejs-modules
+import path from "node:path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import tailwindcss from "@tailwindcss/vite";
@@ -12,7 +14,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@": "src/",
+      "@": path.resolve(import.meta.dirname, "./src"),
     },
   },
 });

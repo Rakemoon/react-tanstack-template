@@ -8,7 +8,7 @@ import eslintPluginImport from "eslint-plugin-import";
 import eslintPluginUnicorn from "eslint-plugin-unicorn";
 
 export default tseslint.config(
-  { ignores: ["dist"] },
+  { ignores: ["dist", "src/routeTree.gen.ts", "src/vite-env.d.ts"] },
   {
     // eslint-disable-next-line import/no-named-as-default-member
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
@@ -32,7 +32,6 @@ export default tseslint.config(
   eslintPluginPrettier,
 
   {
-    files: ["**/*.{js,mjs,cjs,ts,tsx}"],
     extends: [
       eslintPluginImport.flatConfigs.recommended,
       eslintPluginImport.flatConfigs.typescript,

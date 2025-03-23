@@ -10,7 +10,7 @@ const Route = createFileRoute("/")({
 function Index() {
   const [count, setCount] = useState<number>(0);
   const addCount = setCount.bind(undefined, count + 1);
-  const subCount = setCount.bind(undefined, count - 1);
+  const subCount = setCount.bind(undefined, count === 0 ? count : count - 1);
   return (
     <div className="w-full h-screen grid place-content-center">
       <div className="gap-2 grid grid-cols-4">
@@ -29,8 +29,16 @@ function Index() {
         <Button variant="ghost" className="rotate-2" onClick={subCount}>
           Sub {count}
         </Button>
-        <img src="/vite.svg" className="size-20 col-span-2 mx-auto" />
-        <img src={reactLogo} className="size-20 col-span-2 mx-auto" />
+        <img
+          src="/vite.svg"
+          className="size-20 col-span-2 mx-auto"
+          alt="vite-logo"
+        />
+        <img
+          src={reactLogo}
+          className="size-20 col-span-2 mx-auto"
+          alt="react-logo"
+        />
       </div>
     </div>
   );

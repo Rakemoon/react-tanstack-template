@@ -55,7 +55,7 @@ export default tseslint.config(
       "import/no-extraneous-dependencies": [
         "error",
         {
-          devDependencies: ["./*.config.{js,ts}"],
+          devDependencies: ["**/*.{test,spec,config}.{ts,js}"],
         },
       ],
       "import/no-mutable-exports": "error",
